@@ -1,0 +1,12 @@
+.empty__container {
+  display: flex;
+  background-color: #f2dede;
+  width: 100%;
+  padding: 3.5%;
+  border-radius: 20px;
+}
+
+.empty__text {
+  color: #b94442;
+  font-size: 0.9rem;
+}

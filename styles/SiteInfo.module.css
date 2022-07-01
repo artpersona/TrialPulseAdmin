@@ -1,0 +1,18 @@
+.site__container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 80%;
+  align-self: center;
+  margin-top: 7%;
+}
+
+.title__text {
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.label__text {
+  color: #8e8e93;
+  font-weight: 500;
+}

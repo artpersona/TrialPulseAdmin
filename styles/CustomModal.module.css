@@ -1,0 +1,10 @@
+.container {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.headerText {
+  margin: 0 auto;
+}

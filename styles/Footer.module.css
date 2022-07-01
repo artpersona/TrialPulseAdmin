@@ -1,0 +1,19 @@
+.container {
+  padding: 1rem 0;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.footer__text {
+  color: white;
+  text-align: center;
+  align-self: center;
+}
+.company__text {
+  text-align: center;
+  color: #ff9500;
+}

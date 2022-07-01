@@ -1,0 +1,57 @@
+.container {
+  background-color: #f2f2f7;
+  height: 250px;
+  margin: 0px 10px;
+  width: 90%;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.roleContainer {
+  background-color: #ff2d55;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 1rem;
+  z-index: 9999s;
+  position: relative;
+  top: -20px;
+}
+.roleText {
+  color: white;
+  text-align: center;
+  font-size: 0.8rem;
+}
+.iconContainer {
+  z-index: 1;
+}
+.staffName {
+  width: 70%;
+  text-align: center;
+  color: #8e8e93;
+}
+
+.buttonEdit {
+  background-color: #ff9500;
+  border-radius: 5px;
+  padding: 7px 10px;
+  color: #9b9c9c;
+  cursor: pointer;
+  border-width: 0;
+  margin: 0 5px;
+}
+
+.buttonDelete {
+  background-color: rgb(255, 14, 14);
+  border-radius: 5px;
+  padding: 7px 10px;
+  color: #9b9c9c;
+  cursor: pointer;
+  border-width: 0;
+  margin: 0 5px;
+}
