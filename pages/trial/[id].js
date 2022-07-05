@@ -130,9 +130,9 @@ export default function IndividualTrial() {
         <div className={styles.panel__header}>Trial Setting</div>
         <Form className={styles.panel__content}>
           <div className={styles.panel__wrapper}>
-            {trialData?.trial_settings?.map((item) => {
+            {trialData?.trial_settings?.map((item, index) => {
               return (
-                <div className={styles.radio__container}>
+                <div className={styles.radio__container} key={index.toString()}>
                   <p className={styles.radio__label}>{item?.title}</p>
                   <div key={`inline-radio`} className="mb-3">
                     <Form.Check
