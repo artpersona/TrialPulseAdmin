@@ -1,7 +1,7 @@
 import styles from "../../styles/Sites.module.css";
 import { InputGroup, FormControl } from "react-bootstrap";
 import { BsSearch } from "react-icons/bs";
-import { SponsorItem } from "../../components";
+import { SponsorItem, CustomModal } from "../../components";
 import { useRouter } from "next/router";
 
 export default function Sites() {
@@ -14,7 +14,6 @@ export default function Sites() {
       </div>
 
       <div className={styles.header}>
-        <button className="buttonPrimary">Add Site</button>
         <InputGroup className="w-75">
           <FormControl
             placeholder="Search site"

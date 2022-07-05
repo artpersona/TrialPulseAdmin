@@ -8,12 +8,16 @@ import {
 import styles from "../../styles/Sites.module.css";
 import { InputGroup, FormControl } from "react-bootstrap";
 import { BsSearch } from "react-icons/bs";
+import { useSiteContext } from "../../shared/contexts/SitesContext";
+import { useProtocolContext } from "../../shared/contexts/ProtocolContext";
 function IndividualSite() {
+  const { sites } = useSiteContext();
+  const { protocols } = useProtocolContext();
   const [activeValue, setActiveValue] = useState("Info");
   return (
     <div>
       <div className="pageTitle__container">
-        <p className="pageTitle">Sponsors</p>
+        <p className="pageTitle">Site Info</p>
       </div>
 
       <div className={styles.sites__container}>
@@ -76,9 +80,9 @@ function IndividualSite() {
               </div>
 
               <div className={styles.content__container}>
-                <ProtocolItem name="Cleveland Clinic" />
-                <ProtocolItem name="Cleveland Clinic" />
-                <ProtocolItem name="Cleveland Clinic" />
+                {protocols.map((protocol) => {
+                  return <ProtocolItem key={protocol.id} data={protocol} />;
+                })}
               </div>
             </div>
           </div>

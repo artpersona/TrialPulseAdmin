@@ -1,8 +1,10 @@
 import styles from "../styles/Protocols.module.css";
 import { InputGroup, FormControl } from "react-bootstrap";
 import { BsSearch } from "react-icons/bs";
-import { ProtocolItem } from "../components";
+import { ProtocolItem, Empty } from "../components";
+import { useProtocolContext } from "../shared/contexts/ProtocolContext";
 export default function Sites() {
+  const { protocols } = useProtocolContext();
   return (
     <div className={styles.container}>
       <div className="pageTitle__container">
@@ -12,7 +14,7 @@ export default function Sites() {
       <div className={styles.header}>
         <InputGroup className="w-75">
           <FormControl
-            placeholder="Search site"
+            placeholder="Search protocol"
             aria-label="Username"
             aria-describedby="basic-addon1"
             className="py-2"
@@ -24,10 +26,9 @@ export default function Sites() {
       </div>
 
       <div className={styles.content__container}>
-        <ProtocolItem name="Cleveland Clinic" />
-        <ProtocolItem name="Cleveland Clinic" />
-
-        <ProtocolItem name="Cleveland Clinic" />
+        {protocols.map((item) => {
+          return <ProtocolItem key={item.id} data={item} />;
+        })}
       </div>
     </div>
   );

@@ -17,8 +17,8 @@ function SponsorProvider({ children }) {
   const fetchSponsors = () => {
     const sponsorRef = ref(db, "sponsors");
     onValue(sponsorRef, (snapshot) => {
-      const data = collectIdsAndDocs(snapshot.val());
-      console.log("data is: ", data);
+      const data = [];
+      if (snapshot.val()) data = collectIdsAndDocs(snapshot.val());
       setSponsors(data);
     });
   };
@@ -45,7 +45,24 @@ function SponsorProvider({ children }) {
   };
 
   const getSpecificSponsorProtocols = (sponsorId) => {
-    return protocols.filter((data) => data.sponsor_id === sponsorId);
+    return protocols.filter((data) => data.sponsor.id === sponsorId);
+  };
+
+  const addSponsorStaff = (staffName) => {
+    return new Promise((resolve, reject) => {
+      const sponsorStaffRef = ref(db, "sponsor_staff");
+      let key = push(sponsorStaffRef, {}).key;
+      let addRef = ref(db, `sponsor_staff/${key}`);
+      console.log("key is: ", key);
+      set(addRef, {
+        id: key,
+        name: staffName,
+      })
+        .then(() => {
+          resolve(key);
+        })
+        .catch((err) => reject(err));
+    });
   };
 
   //  End Functions

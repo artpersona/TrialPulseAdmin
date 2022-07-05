@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "../../styles/Sponsors.module.css";
 import { InputGroup, FormControl } from "react-bootstrap";
 import { BsSearch } from "react-icons/bs";
-import { SponsorItem, CustomModal } from "../../components";
+import { SponsorItem, CustomModal, Empty } from "../../components";
 import { useRouter } from "next/router";
 import { useSponsorContext } from "../../shared/contexts/SponsorsContext";
 
@@ -55,6 +55,8 @@ export default function Sponsors() {
             />
           );
         })}
+
+        {sponsors.length === 0 && <Empty name={"sponsors"} />}
       </div>
 
       <CustomModal
