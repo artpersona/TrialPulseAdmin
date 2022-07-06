@@ -50,13 +50,13 @@ export default function Sponsors() {
           return (
             <SponsorItem
               key={item.id}
-              name={item.name}
+              data={item}
               onPress={() => router.push(`/sponsors/${item.id}`)}
             />
           );
         })}
 
-        {sponsors.length === 0 && <Empty name={"sponsors"} />}
+        {sponsors?.length === 0 && <Empty name={"sponsors"} />}
       </div>
 
       <CustomModal

@@ -120,7 +120,7 @@ export default function Sponsor() {
               protocols.map((protocol) => {
                 return <ProtocolItem key={protocol.id} data={protocol} />;
               })}
-            {!protocols?.staffs?.length === 0 && <Empty name={"protocol"} />}
+            {protocols.length === 0 && <Empty name={"protocol"} />}
           </div>
         </div>
       </div>

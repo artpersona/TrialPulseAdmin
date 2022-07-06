@@ -29,17 +29,17 @@ export default function Sites() {
 
       <div className={styles.content__container}>
         <SponsorItem
-          name="Cleveland Clinic"
+          data={{ name: "Cleveland Clinic" }}
           onPress={() => router.push(`/sites/Cleveland Clinic`)}
         />
         <SponsorItem
-          name="Douglas State University Hospital"
+          data={{ name: "Douglas State University Hospital" }}
           onPress={() =>
             router.push(`/sites/Douglas State University Hospital`)
           }
         />
         <SponsorItem
-          name="Franklin State University Hospital"
+          data={{ name: "Franklin State University Hospital" }}
           onPress={() =>
             router.push(`/sites/Franklin State University Hospital`)
           }

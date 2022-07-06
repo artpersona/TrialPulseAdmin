@@ -1,13 +1,13 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { db } from "../configs/firebase";
-import { ref, set, onValue, push } from "firebase/database";
+import { ref, set, onValue, push, remove } from "firebase/database";
 import { collectIdsAndDocs } from "../utils/misc.utility";
 import { useProtocolContext } from "./ProtocolContext";
 const SponsorContext = createContext({});
 export const useSponsorContext = () => useContext(SponsorContext);
 
 function SponsorProvider({ children }) {
-  const { protocols } = useProtocolContext();
+  const { protocols, deleteProtocols } = useProtocolContext();
   // States
   const [sponsors, setSponsors] = useState(null);
   // End States
@@ -40,6 +40,16 @@ function SponsorProvider({ children }) {
     });
   };
 
+  const removeSponsor = async (id) => {
+    const sponsorRef = ref(db, `sponsors/${id}`);
+    try {
+      await remove(sponsorRef);
+      return await deleteProtocols(id);
+    } catch (error) {
+      return error;
+    }
+  }; // End Functions
+
   const getSpecificSponsor = (sponsorId) => {
     return sponsors.filter((data) => data.id === sponsorId)[0];
   };
@@ -53,7 +63,6 @@ function SponsorProvider({ children }) {
       const sponsorStaffRef = ref(db, "sponsor_staff");
       let key = push(sponsorStaffRef, {}).key;
       let addRef = ref(db, `sponsor_staff/${key}`);
-      console.log("key is: ", key);
       set(addRef, {
         id: key,
         name: staffName,
@@ -77,6 +86,7 @@ function SponsorProvider({ children }) {
     addSponsor,
     getSpecificSponsor,
     getSpecificSponsorProtocols,
+    removeSponsor,
   };
 
   return (

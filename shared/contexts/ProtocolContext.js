@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { db } from "../configs/firebase";
-import { ref, set, onValue, push, update } from "firebase/database";
+import { ref, set, onValue, push, update, remove } from "firebase/database";
 import { collectIdsAndDocs } from "../utils/misc.utility";
 import { useAppContext } from "./AppContext";
 const ProtocolContext = createContext({});
@@ -64,6 +64,25 @@ function ProtocolProvider({ children }) {
   const findProtocol = (protocolId) => {
     return protocols.filter((data) => data.id === protocolId)[0];
   };
+
+  const deleteProtocols = async (id) => {
+    let toDeleteProtocols = [...protocols];
+    toDeleteProtocols = toDeleteProtocols.filter((data) => {
+      return data.sponsor.id === id;
+    });
+
+    return await Promise.all(
+      toDeleteProtocols.forEach(async (data) => {
+        await deleteProtocolHelper(data.id);
+      })
+    );
+  };
+
+  const deleteProtocolHelper = async (id) => {
+    const protocolRef = ref(db, `protocols/${id}`);
+    return await remove(protocolRef);
+  }; // End Functions
+
   //  End Functions
 
   // Effects
@@ -71,7 +90,13 @@ function ProtocolProvider({ children }) {
     fetchAllProtocols();
   }, []);
 
-  const payload = { protocols, addProtocol, findProtocol, updateProtocol };
+  const payload = {
+    protocols,
+    addProtocol,
+    findProtocol,
+    updateProtocol,
+    deleteProtocols,
+  };
 
   return (
     <ProtocolContext.Provider value={payload}>
