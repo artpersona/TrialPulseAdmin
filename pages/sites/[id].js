@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   CustomSwitch,
   SiteInfo,
@@ -10,10 +10,19 @@ import { InputGroup, FormControl } from "react-bootstrap";
 import { BsSearch } from "react-icons/bs";
 import { useSiteContext } from "../../shared/contexts/SitesContext";
 import { useProtocolContext } from "../../shared/contexts/ProtocolContext";
+import { useRouter } from "next/router";
 function IndividualSite() {
-  const { sites } = useSiteContext();
+  const router = useRouter();
+  const id = router?.query?.id;
+
+  const { fetchSpecificSite } = useSiteContext();
   const { protocols } = useProtocolContext();
   const [activeValue, setActiveValue] = useState("Info");
+  const [siteInfo, setSiteInfo] = useState({});
+
+  useEffect(() => {
+    setSiteInfo(fetchSpecificSite(id));
+  }, [id]);
   return (
     <div>
       <div className="pageTitle__container">
@@ -29,7 +38,7 @@ function IndividualSite() {
         />
 
         {activeValue === "Info" ? (
-          <SiteInfo />
+          <SiteInfo {...siteInfo} />
         ) : (
           <div className={styles.main__content}>
             <div className={styles.staffContainer}>

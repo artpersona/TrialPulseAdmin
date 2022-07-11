@@ -26,6 +26,10 @@ function SiteProvider({ children }) {
     });
   };
 
+  const fetchSpecificSite = (id) => {
+    return sites.find((site) => site.id === id);
+  };
+
   //  End Functions
 
   // Effects
@@ -35,6 +39,7 @@ function SiteProvider({ children }) {
 
   const payload = {
     sites,
+    fetchSpecificSite,
   };
 
   return (
