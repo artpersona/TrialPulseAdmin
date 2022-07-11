@@ -45,12 +45,6 @@ function IndividualSite() {
               <p className={styles.headerTitle}>Physicians</p>
 
               <div className={styles.header}>
-                <button
-                  className="buttonPrimary"
-                  onClick={() => setAddModalShow(true)}
-                >
-                  Add Physicians
-                </button>
                 <InputGroup className="w-75">
                   <FormControl
                     placeholder="Search staffs"
