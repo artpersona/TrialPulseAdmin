@@ -52,7 +52,16 @@ export default function IndividualTrial() {
     },
     {
       cell: (row) => (
-        <button id={row.ID}>
+        <button
+          id={row.id}
+          onClick={(e) => {
+            e.preventDefault();
+            router.push({
+              pathname: `/trial-sites/${row.id}`,
+              query: { trial_id: id, site_id: row.id },
+            });
+          }}
+        >
           <BiCog size={20} />
         </button>
       ),
