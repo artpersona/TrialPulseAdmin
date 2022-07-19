@@ -16,12 +16,7 @@ export default function PageHeader() {
         <Container>
           <Navbar.Brand href="#home">
             <Link href="/">
-              <Image
-                src="/logo.png"
-                alt="Picture of the author"
-                width={200}
-                height={50}
-              />
+              <h5>TRIAL PULSE</h5>
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
