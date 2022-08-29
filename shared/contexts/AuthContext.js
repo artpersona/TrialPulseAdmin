@@ -31,6 +31,20 @@ function AuthProvider({ children }) {
     });
   };
 
+  const registerUser = (email, password) => {
+    return new Promise((resolve, reject) => {
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((data) => {
+          console.log("data is: ", data);
+          resolve(data);
+        })
+        .catch((err) => {
+          console.log("err is: ", err);
+          reject(err);
+        });
+    });
+  };
+
   const logout = async () => {
     setLoggedUser(null);
     await signOut(auth);
@@ -55,6 +69,7 @@ function AuthProvider({ children }) {
     loggedUser,
     loginViaEmail,
     logout,
+    registerUser,
   };
 
   return (

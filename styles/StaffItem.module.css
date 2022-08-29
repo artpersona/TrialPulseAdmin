@@ -27,8 +27,14 @@
   text-align: center;
   font-size: 0.8rem;
 }
-.iconContainer {
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   z-index: 1;
+}
+.iconContainer {
+  align-self: center;
 }
 .staffName {
   width: 70%;
@@ -36,7 +42,7 @@
   color: #8e8e93;
 }
 
-.buttonEdit {
+.buttonMessage {
   background-color: #ff9500;
   border-radius: 5px;
   padding: 7px 10px;
@@ -48,6 +54,16 @@
 
 .buttonDelete {
   background-color: rgb(255, 14, 14);
+  border-radius: 5px;
+  padding: 7px 10px;
+  color: #9b9c9c;
+  cursor: pointer;
+  border-width: 0;
+  margin: 0 5px;
+}
+
+.buttonEdit {
+  background-color: #4e5dff;
   border-radius: 5px;
   padding: 7px 10px;
   color: #9b9c9c;

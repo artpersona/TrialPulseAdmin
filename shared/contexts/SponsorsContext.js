@@ -1,13 +1,24 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { db } from "../configs/firebase";
-import { ref, set, onValue, push, remove } from "firebase/database";
+import {
+  ref,
+  set,
+  onValue,
+  push,
+  remove,
+  query,
+  orderByChild,
+  equalTo,
+} from "firebase/database";
 import { collectIdsAndDocs } from "../utils/misc.utility";
 import { useProtocolContext } from "./ProtocolContext";
+import { useAuthContext } from "./AuthContext";
 const SponsorContext = createContext({});
 export const useSponsorContext = () => useContext(SponsorContext);
 
 function SponsorProvider({ children }) {
   const { protocols, deleteProtocols } = useProtocolContext();
+  const { registerUser } = useAuthContext();
   // States
   const [sponsors, setSponsors] = useState(null);
   // End States
@@ -55,25 +66,63 @@ function SponsorProvider({ children }) {
   };
 
   const getSpecificSponsorProtocols = (sponsorId) => {
-    return protocols.filter((data) => data.sponsor.id === sponsorId);
+    let data = protocols.filter((data) => data.sponsor.id === sponsorId);
+    return data;
   };
 
-  const addSponsorStaff = (staffName) => {
+  const fetchStaff = (sponsorId, setter) => {
+    onValue(
+      query(ref(db, "users"), orderByChild("sponsorId"), equalTo(sponsorId)),
+      (snapshot) => {
+        const data = [];
+        if (snapshot.val()) data = collectIdsAndDocs(snapshot.val());
+        data = data.filter((data) => data.status === "active");
+        setter(data);
+      }
+    );
+  };
+
+  const addSponsorStaff = (staffData, sponsorId) => {
     return new Promise((resolve, reject) => {
-      const sponsorStaffRef = ref(db, "sponsor_staff");
+      const sponsorStaffRef = ref(db, "users");
       let key = push(sponsorStaffRef, {}).key;
-      let addRef = ref(db, `sponsor_staff/${key}`);
+      let addRef = ref(db, `users/${key}`);
       set(addRef, {
         id: key,
-        name: staffName,
+        firstName: staffData.firstName,
+        lastName: staffData.lastName,
+        email: staffData.email,
+        role: staffData.role,
+        contact_type: "sponsor",
+        sponsorId: sponsorId,
+        status: "active",
       })
         .then(() => {
-          resolve(key);
+          registerUser(staffData.email, "Access")
+            .then(() => {
+              resolve(key);
+            })
+            .catch((err) => {
+              console.log(err);
+              alert("Error registering user");
+              reject(err);
+            });
         })
         .catch((err) => reject(err));
     });
   };
 
+  const removeSponsorStaff = (id) => {
+    return new Promise((resolve, reject) => {
+      const sponsorStaffRef = ref(db, `users/${id}`);
+      remove(sponsorStaffRef)
+        .then(() => resolve())
+        .catch((err) => {
+          alert("Error removing staff");
+          reject(err);
+        });
+    });
+  };
   //  End Functions
 
   // Effects
@@ -87,6 +136,9 @@ function SponsorProvider({ children }) {
     getSpecificSponsor,
     getSpecificSponsorProtocols,
     removeSponsor,
+    addSponsorStaff,
+    fetchStaff,
+    removeSponsorStaff,
   };
 
   return (
