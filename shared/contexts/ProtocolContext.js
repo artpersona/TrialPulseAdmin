@@ -19,6 +19,7 @@ function ProtocolProvider({ children }) {
     onValue(protocolsRef, (snapshot) => {
       const data = [];
       if (snapshot.val()) {
+        console.log("change detected");
         data = collectIdsAndDocs(snapshot.val());
       }
       setProtocols(data);
@@ -81,9 +82,54 @@ function ProtocolProvider({ children }) {
   const deleteProtocolHelper = async (id) => {
     const protocolRef = ref(db, `protocols/${id}`);
     return await remove(protocolRef);
-  }; // End Functions
+  };
 
-  //  End Functions
+  // Trial Sites Functions
+
+  const fetchTrialSite = (protocolId, siteId) => {
+    let data = protocols.find((item) => item.id === protocolId);
+    if (data && data.trial_sites) {
+      return data.trial_sites[siteId];
+    }
+    return null;
+  };
+
+  const updateTrialSite = (protocolId, siteId, newData, location) => {
+    return new Promise((resolve, reject) => {
+      let protocolsRef = ref(
+        db,
+        `protocols/${protocolId}/trial_sites/${siteId}/${location}`
+      );
+      let key = push(protocolsRef, {}).key;
+      let addRef = ref(
+        db,
+        `protocols/${protocolId}/trial_sites/${siteId}/${location}/${key}`
+      );
+
+      newData.id = key;
+      set(addRef, newData)
+        .then(() => {
+          resolve(key);
+        })
+        .catch((err) => reject(err));
+    });
+  };
+
+  const deleteTrialInfo = (protocolId, siteId, location) => {
+    return new Promise((resolve, reject) => {
+      let protocolsRef = ref(
+        db,
+        `protocols/${protocolId}/trial_sites/${siteId}/${location}`
+      );
+      remove(protocolsRef)
+        .then(() => {
+          resolve();
+        })
+        .catch((err) => reject(err));
+    });
+  }; // End Trial Sites Functions
+
+  // End Functions
 
   // Effects
   useEffect(() => {
@@ -96,6 +142,9 @@ function ProtocolProvider({ children }) {
     findProtocol,
     updateProtocol,
     deleteProtocols,
+    fetchTrialSite,
+    updateTrialSite,
+    deleteTrialInfo,
   };
 
   return (

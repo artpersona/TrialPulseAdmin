@@ -7,6 +7,8 @@ import { useProtocolContext } from "../../shared/contexts/ProtocolContext";
 import { useSiteContext } from "../../shared/contexts/SitesContext";
 import { useAppContext } from "../../shared/contexts/AppContext";
 import { CustomModal } from "../../components";
+import DataTable from "react-data-table-component";
+import { BiCog } from "react-icons/bi";
 export default function IndividualTrial() {
   const router = useRouter();
   const id = router?.query?.id;
@@ -39,7 +41,49 @@ export default function IndividualTrial() {
     rows: [{ name: "St. Mary Hopkins Hospital", assignedDate: "July 5, 2022" }],
   });
 
-  console.log("sites are: ", sites);
+  const columns = [
+    {
+      name: "Site",
+      selector: (row) => row.name,
+    },
+    {
+      name: "Assigned Date",
+      selector: (row) => "July 06, 2022",
+    },
+    {
+      cell: (row) => (
+        <button
+          id={row.id}
+          onClick={(e) => {
+            e.preventDefault();
+            router.push({
+              pathname: `/trial-sites/${row.id}`,
+              query: { trial_id: id, site_id: row.id },
+            });
+          }}
+        >
+          <BiCog size={20} />
+        </button>
+      ),
+      ignoreRowClick: true,
+      allowOverflow: true,
+      button: true,
+      name: "Actions",
+    },
+  ];
+
+  const data = [
+    {
+      id: 1,
+      name: "Beetlejuice",
+      year: "1988",
+    },
+    {
+      id: 2,
+      name: "Ghostbusters",
+      year: "1984",
+    },
+  ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -179,7 +223,7 @@ export default function IndividualTrial() {
             Assign Site
           </Button>
 
-          <MDBDataTableV5
+          {/* <MDBDataTableV5
             hover
             entriesOptions={[5, 20, 25]}
             entries={5}
@@ -187,7 +231,9 @@ export default function IndividualTrial() {
             data={datatable}
             searchTop
             searchBottom={false}
-          />
+          /> */}
+
+          <DataTable columns={columns} data={availableSites} />
         </Tab>
         <Tab eventKey="docs" title="Conset Documents">
           <Button

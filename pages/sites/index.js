@@ -3,8 +3,9 @@ import { InputGroup, FormControl } from "react-bootstrap";
 import { BsSearch } from "react-icons/bs";
 import { SponsorItem, CustomModal } from "../../components";
 import { useRouter } from "next/router";
-
+import { useSiteContext } from "../../shared/contexts/SitesContext";
 export default function Sites() {
+  const { sites } = useSiteContext();
   const router = useRouter();
 
   return (
@@ -28,22 +29,13 @@ export default function Sites() {
       </div>
 
       <div className={styles.content__container}>
-        <SponsorItem
-          data={{ name: "Cleveland Clinic" }}
-          onPress={() => router.push(`/sites/Cleveland Clinic`)}
-        />
-        <SponsorItem
-          data={{ name: "Douglas State University Hospital" }}
-          onPress={() =>
-            router.push(`/sites/Douglas State University Hospital`)
-          }
-        />
-        <SponsorItem
-          data={{ name: "Franklin State University Hospital" }}
-          onPress={() =>
-            router.push(`/sites/Franklin State University Hospital`)
-          }
-        />
+        {sites.map((site, index) => (
+          <SponsorItem
+            data={{ name: site.name }}
+            onPress={() => router.push(`/sites/${site.id}`)}
+            key={index.toString()}
+          />
+        ))}
       </div>
     </div>
   );

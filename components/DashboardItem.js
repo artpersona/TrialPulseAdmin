@@ -2,6 +2,7 @@ import styles from "../styles/DashboardItem.module.css";
 import { BsChevronRight } from "react-icons/bs";
 import Link from "next/link";
 export default function DashboardItem({ title, icon, path }) {
+  console.log("path is: ", path);
   return (
     <Link href={path}>
       <div className={styles.container}>
