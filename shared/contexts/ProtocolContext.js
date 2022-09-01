@@ -46,9 +46,14 @@ function ProtocolProvider({ children }) {
     });
   };
 
-  const updateProtocol = (data) => {
+  const updateProtocol = (data, path) => {
     return new Promise((resolve, reject) => {
-      let updateRef = ref(db, `protocols/${data.id}`);
+      let updateRef;
+      if (path) {
+        updateRef = ref(db, `protocols/${data.id}/${path}`);
+      } else {
+        updateRef = ref(db, `protocols/${data.id}`);
+      }
 
       let protocolData = {
         ...data,
@@ -94,6 +99,24 @@ function ProtocolProvider({ children }) {
     return null;
   };
 
+  const addEligibilityCriteria = (protocolId, newData) => {
+    return new Promise((resolve, reject) => {
+      let updateRef = ref(db, `protocols/${protocolId}/eligibility_criterias`);
+      let key = push(updateRef, {}).key;
+      let addRef = ref(
+        db,
+        `protocols/${protocolId}/eligibility_criterias/${key}`
+      );
+
+      newData.id = key;
+      update(addRef, newData)
+        .then(() => {
+          resolve(newData);
+        })
+        .catch((err) => reject(err));
+    });
+  };
+
   const updateTrialSite = (protocolId, siteId, newData, location) => {
     return new Promise((resolve, reject) => {
       let protocolsRef = ref(
@@ -115,12 +138,9 @@ function ProtocolProvider({ children }) {
     });
   };
 
-  const deleteTrialInfo = (protocolId, siteId, location) => {
+  const deleteTrialInfo = (protocolId, location) => {
     return new Promise((resolve, reject) => {
-      let protocolsRef = ref(
-        db,
-        `protocols/${protocolId}/trial_sites/${siteId}/${location}`
-      );
+      let protocolsRef = ref(db, `protocols/${protocolId}/${location}`);
       remove(protocolsRef)
         .then(() => {
           resolve();
@@ -145,6 +165,7 @@ function ProtocolProvider({ children }) {
     fetchTrialSite,
     updateTrialSite,
     deleteTrialInfo,
+    addEligibilityCriteria,
   };
 
   return (
