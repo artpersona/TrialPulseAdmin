@@ -6,6 +6,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { auth } from "../configs/firebase";
+import Layout from "../../layouts/Layout";
 
 const AuthContext = createContext({});
 export const useAuthContext = () => useContext(AuthContext);
@@ -13,10 +14,35 @@ export const useAuthContext = () => useContext(AuthContext);
 function AuthProvider({ children }) {
   // States
   const [loggedUser, setLoggedUser] = useState(null);
+  const [loading, setLoading] = useState(true);
   // End States
 
-  //   Functions
+  // Effects
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setLoggedUser(user);
+        setLoading(false);
+      } else {
+        setLoggedUser(null);
+      }
+    });
 
+    return () => unsubscribe();
+  }, []);
+  // End Effects
+
+  // Conditions
+  if (loading) {
+    return (
+      <Layout>
+        <h1>Loading...</h1>
+      </Layout>
+    )
+  }
+  // End Conditions
+
+  //   Functions
   const loginViaEmail = (email, password) => {
     return new Promise((resolve, reject) => {
       signInWithEmailAndPassword(auth, email, password)
@@ -52,24 +78,13 @@ function AuthProvider({ children }) {
 
   //  End Functions
 
-  // Effects
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setLoggedUser(user);
-      } else {
-        setLoggedUser(null);
-      }
-    });
-
-    return () => unsubscribe();
-  }, []);
-
   const payload = {
     loggedUser,
     loginViaEmail,
     logout,
     registerUser,
+    loading,
+    setLoading
   };
 
   return (
