@@ -10,7 +10,7 @@ function ProtocolProvider({ children }) {
   const { trialSettings, trialStatus } = useAppContext();
 
   // States
-  const [protocols, setProtocols] = useState(null);
+  const [protocols, setProtocols] = useState([]);
   // End States
 
   //   Functions
