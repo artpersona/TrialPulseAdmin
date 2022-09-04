@@ -37,6 +37,7 @@ export default function IndividualTrial() {
   const [addSiteModal, setAddSiteModal] = useState(false);
 
   const [availableSites, setAvailableSites] = useState([]);
+  const [selectedSites, setSelectedSites] = useState([]);
 
   // Eligibility Criteria
   const [eligibilityCriterias, setEligibilityCriterias] = useState([]);
@@ -293,16 +294,27 @@ export default function IndividualTrial() {
 
   useEffect(() => {
     if (trialData) {
+      let existingSitesIds = [];
       let existingSites = [];
-      if (trialData?.trial_stes) {
-        existingSites = trialData?.trial_sites.map((item) => {
-          return item.id;
+      if (trialData?.host_sites) {
+        existingSitesIds = trialData?.host_sites.map((item) => {
+          return item.siteId;
         });
       }
+
+      console.log("all sites are: ", sites);
+      console.log("host sites are: ", trialData?.host_sites);
+
       let displayedSites = [...sites];
-      displayedSites = displayedSites.filter(
-        (item) => !existingSites.includes(item.id)
-      );
+      displayedSites = displayedSites.filter((item) => {
+        if (existingSitesIds.includes(item.id)) {
+          existingSites.push(item);
+        } else {
+          return !existingSitesIds.includes(item.id);
+        }
+      });
+
+      setSelectedSites(existingSites);
       setAvailableSites(displayedSites);
 
       let criterias = trialData?.eligibility_criterias
@@ -595,32 +607,14 @@ export default function IndividualTrial() {
             Assign Site
           </Button>
 
-          <DataTable columns={columns} data={availableSites} />
+          <DataTable columns={columns} data={selectedSites} />
         </Tab>
-        {/* <Tab eventKey="docs" title="Conset Documents">
-          <Button
-            className="buttonPrimary"
-            onClick={handleSubmit}
-            style={{ marginBottom: "2%" }}
-          >
-            Upload Consent Document
-          </Button>
-          <MDBDataTableV5
-            hover
-            entriesOptions={[5, 20, 25]}
-            entries={5}
-            pagesAmount={4}
-            data={datatable}
-            searchTop
-            searchBottom={false}
-          />
-        </Tab> */}
       </Tabs>
 
       <CustomModal
         visible={addSiteModal}
         handleClose={() => setAddSiteModal(false)}
-        title="Assign Site"
+        title="Assign Sitessss"
         body={
           <Form.Select
             aria-label="Default select example"
