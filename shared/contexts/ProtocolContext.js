@@ -55,13 +55,22 @@ function ProtocolProvider({ children }) {
         updateRef = ref(db, `protocols/${data.id}`);
       }
 
-      let protocolData = {
-        ...data,
-      };
+      let protocolData = {};
+
+      if (path === "/host_sites") {
+        protocolData = {
+          ...data.host_sites,
+        };
+      } else {
+        protocolData = {
+          ...data,
+        };
+      }
 
       update(updateRef, protocolData)
         .then(() => {
-          resolve(data.id);
+          console.log("data is: ", data);
+          resolve();
         })
         .catch((err) => reject(err));
     });

@@ -59,9 +59,9 @@ function IndividualSite() {
               </div>
 
               <div className={styles.staff__content__container}>
+                {/* <StaffItem />
                 <StaffItem />
-                <StaffItem />
-                <StaffItem />
+                <StaffItem /> */}
               </div>
             </div>
             <div className={styles.protocolContainer}>

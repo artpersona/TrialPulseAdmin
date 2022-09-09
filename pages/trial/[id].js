@@ -39,6 +39,8 @@ export default function IndividualTrial() {
   const [availableSites, setAvailableSites] = useState([]);
   const [selectedSites, setSelectedSites] = useState([]);
 
+  const [indiSelectedSites, setIndiSelectedSites] = useState(null);
+
   // Eligibility Criteria
   const [eligibilityCriterias, setEligibilityCriterias] = useState([]);
   const [eligibilityCriteriasModal, setEligibilityCriteriasModal] =
@@ -209,6 +211,44 @@ export default function IndividualTrial() {
     });
   };
 
+  const handleAssignSite = (e) => {
+    if (indiSelectedSites === "none" || indiSelectedSites === null) {
+      MySwal.fire({
+        title: "Error!",
+        text: "Please select a site",
+        icon: "error",
+        confirmButtonText: "Test",
+      });
+    } else {
+      e.preventDefault();
+      let tempData = [...selectedSites];
+      let pushData = {
+        siteId: indiSelectedSites,
+      };
+      tempData.push(pushData);
+
+      updateProtocol({ host_sites: tempData, id: trialData.id }, "/host_sites")
+        .then((data) => {
+          // setSelectedSites(tempData);
+          MySwal.fire({
+            title: "Success!",
+            text: "Site has been assigned",
+            icon: "success",
+            confirmButtonText: "OK",
+          });
+          setAddSiteModal(false);
+        })
+        .catch((err) => {
+          MySwal.fire({
+            title: "Error!",
+            text: err.message,
+            icon: "error",
+            confirmButtonText: "OK",
+          });
+        });
+    }
+  };
+
   // Eligibility Criteria Submit
   const handleSubmitEligibilityCriteria = () => {
     setEligibilityCriteriasModal(false);
@@ -301,9 +341,6 @@ export default function IndividualTrial() {
           return item.siteId;
         });
       }
-
-      console.log("all sites are: ", sites);
-      console.log("host sites are: ", trialData?.host_sites);
 
       let displayedSites = [...sites];
       displayedSites = displayedSites.filter((item) => {
@@ -603,6 +640,7 @@ export default function IndividualTrial() {
             className="buttonPrimary"
             onClick={() => setAddSiteModal(true)}
             style={{ marginBottom: "2%" }}
+            disabled={availableSites.length === 0}
           >
             Assign Site
           </Button>
@@ -614,15 +652,16 @@ export default function IndividualTrial() {
       <CustomModal
         visible={addSiteModal}
         handleClose={() => setAddSiteModal(false)}
-        title="Assign Sitessss"
+        title="Assign Sitesssss"
         body={
           <Form.Select
             aria-label="Default select example"
-            value={trialData?.trial_status}
-            onChange={(e) =>
-              setTrialData({ ...trialData, trial_status: e.target.value })
-            }
+            value={indiSelectedSites}
+            onChange={(e) => setIndiSelectedSites(e.target.value)}
           >
+            <option key={"0000"} value="none">
+              Select a site
+            </option>
             {availableSites.map((status) => {
               return (
                 <option key={status.id} value={status.id}>
@@ -632,7 +671,7 @@ export default function IndividualTrial() {
             })}
           </Form.Select>
         }
-        // handleSubmit={handleSubmit}
+        handleSubmit={handleAssignSite}
       />
 
       <CustomModal
