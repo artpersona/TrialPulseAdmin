@@ -4,6 +4,8 @@ import { TbNotes } from "react-icons/tb";
 import { BsJournalMedical } from "react-icons/bs";
 import { FaRegHandshake } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
+import { BsChatLeftDotsFill } from "react-icons/bs";
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -21,6 +23,11 @@ export default function Home() {
         title={"Sites"}
         icon={<MdLocationPin size={50} color="#5AC8FA" />}
         path="/sites"
+      />
+      <DashboardItem
+        title={"Messages"}
+        icon={<BsChatLeftDotsFill size={50} color="#5AC8FA" />}
+        path="/messages"
       />
     </div>
   );

@@ -33,13 +33,13 @@ function AuthProvider({ children }) {
   // End Effects
 
   // Conditions
-  if (loading) {
-    return (
-      <Layout>
-        <h1>Loading...</h1>
-      </Layout>
-    )
-  }
+  // if (loading) {
+  //   return (
+  //     <Layout>
+  //       <h1>Loading...</h1>
+  //     </Layout>
+  //   )
+  // }
   // End Conditions
 
   //   Functions

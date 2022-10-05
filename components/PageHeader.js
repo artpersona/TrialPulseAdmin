@@ -38,6 +38,11 @@ export default function PageHeader() {
                   Protocols
                 </a>
               </Link>
+              <Link href={"/messages"}>
+                <a className="text-decoration-none fs-6 text-muted px-3">
+                  Messages
+                </a>
+              </Link>
 
               <a
                 className="text-decoration-none fs-6 text-danger px-4 cursor-pointer"
