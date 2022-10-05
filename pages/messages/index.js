@@ -41,6 +41,7 @@ export default function Home() {
                     getSpecificChatroom(item)
                     executeScroll()
                   }}
+                  key={item.id}
                   className={"d-flex p-2 rounded-3 " + (selectedChatroomUser === item.secondUser ? "bg-secondary bg-opacity-25":"")} style={{alignItems: 'center', cursor: 'pointer', userSelect: 'none'}}>
                   {/* Photo */}
                   <Image thumbnail={true} roundedCircle={true} style={{width: '50px', height: '50px'}} src="user.webp" alt='user photo'/>
@@ -74,14 +75,16 @@ export default function Home() {
             {/* Message Instance */}
             {Object.entries(selectedChatroom).map((item=>{
               return (
-                <div className={item[1].sender === selectedChatroomUser ? "d-flex":'d-flex flex-row-reverse'} style={{alignItems: 'center'}}>
+                <figure 
+                  key={item.id}
+                  className={item[1].sender === selectedChatroomUser ? "d-flex":'d-flex flex-row-reverse'} style={{alignItems: 'center'}}>
                   {/* Photo */}
                   <Image roundedCircle={true} style={{width: '35px', height: '35px'}} src="user.webp" alt='user photo'/>
                   <div ref={myRef} className="p-3 m-3 bg-secondary bg-opacity-25 rounded-3">
                     {/* Message */}
                     <p>{item[1].text}</p>
                   </div>
-                </div>
+                </figure>
               )
             }))}
           </section>
