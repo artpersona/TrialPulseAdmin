@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38">
+  <g id="Clinic_icon" transform="translate(-46 -156)">
+    <circle id="Ellipse_8" data-name="Ellipse 8" cx="19" cy="19" r="19" transform="translate(46 156)" fill="#93a1af"/>
+    <g id="hospital" transform="translate(53.75 162.75)">
+      <path id="Path_114" data-name="Path 114" d="M19.161,9.464H16.446V6.75H15.089V9.464H12.375v1.357h2.714v2.714h1.357V10.821h2.714Z" transform="translate(-4.018 -1.786)" fill="#fff"/>
+      <path id="Path_115" data-name="Path 115" d="M19.893,7.679H18.536V3.607A1.358,1.358,0,0,0,17.179,2.25H6.321A1.358,1.358,0,0,0,4.964,3.607V7.679H3.607A1.358,1.358,0,0,0,2.25,9.036V21.25h19V9.036A1.358,1.358,0,0,0,19.893,7.679Zm-9.5,12.214V15.821h2.714v4.071Zm4.071,0v-4.75a.679.679,0,0,0-.679-.679H9.714a.679.679,0,0,0-.679.679v4.75H3.607V9.036H6.321V3.607H17.179V9.036h2.714V19.893Z" fill="#fff"/>
+    </g>
+  </g>
+</svg>

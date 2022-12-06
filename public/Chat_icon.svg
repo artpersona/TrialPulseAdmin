@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42">
+  <g id="Chat_icon" transform="translate(-307 -165)">
+    <circle id="Ellipse_26" data-name="Ellipse 26" cx="21" cy="21" r="21" transform="translate(307 165)" fill="#ededed"/>
+    <g id="chat-fill" transform="translate(317.495 175.495)">
+      <path id="Path_109" data-name="Path 109" d="M10.875,20.531c6.006,0,10.875-4.26,10.875-9.515S16.88,1.5,10.875,1.5,0,5.76,0,11.015a8.832,8.832,0,0,0,2.678,6.253A14.523,14.523,0,0,1,1.629,21.3.354.354,0,0,0,2,21.792a19.815,19.815,0,0,0,5.682-1.677,12.316,12.316,0,0,0,3.192.416Z" transform="translate(0 -1.5)" fill="#fda92b"/>
+    </g>
+  </g>
+</svg>

@@ -1,42 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .buttonPrimary {
-  background-color: #ff9500 !important;
-  color: white;
-  border: none !important;
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  min-width: 100px;
+	background-color: #ff9500 !important;
+	color: white;
+	border: none !important;
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 16px;
+	cursor: pointer;
+	min-width: 100px;
 }
 .buttonCancel {
-  background-color: #fd5050 !important;
-  color: white;
-  border: none !important;
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  min-width: 100px;
+	background-color: #fd5050 !important;
+	color: white;
+	border: none !important;
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 16px;
+	cursor: pointer;
+	min-width: 100px;
 }
 
 .pageTitle__container {
-  display: flex;
-  flex-direction: row;
-  border-bottom: 2px #e5e5ea solid;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 3%;
+	display: flex;
+	flex-direction: row;
+	border-bottom: 2px #e5e5ea solid;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 3%;
 }
 
 .pageTitle {
-  font-size: 30px;
-  color: #a49993;
+	font-size: 30px;
+	color: #a49993;
 }
 p {
-  all: initial;
-  font-family: Arial, Helvetica, sans-serif;
+	all: initial;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 p * {
-  all: unset;
+	all: unset;
 }

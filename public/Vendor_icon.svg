@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38">
+  <g id="Vendor_icon" transform="translate(-46 -156)">
+    <circle id="Ellipse_8" data-name="Ellipse 8" cx="19" cy="19" r="19" transform="translate(46 156)" fill="#93a1af"/>
+    <g id="bx-purchase-tag" transform="translate(52.001 161.001)">
+      <path id="Path_121" data-name="Path 121" d="M16.615,4.832a1.127,1.127,0,0,0-.8-.332H5.632A1.132,1.132,0,0,0,4.5,5.632V15.815a1.125,1.125,0,0,0,.332.8l9.052,9.052a1.128,1.128,0,0,0,1.6,0L25.667,15.483a1.13,1.13,0,0,0,0-1.6L16.615,4.831ZM14.684,23.267,6.763,15.347V6.763h8.584l7.921,7.921Z" transform="translate(0 0)" fill="#fff"/>
+      <path id="Path_122" data-name="Path 122" d="M13.893,12.187a1.7,1.7,0,1,1-1.7-1.7,1.7,1.7,0,0,1,1.7,1.7Z" transform="translate(-1.471 -1.47)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

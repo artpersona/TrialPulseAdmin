@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38">
+  <g id="ResourceStudy_icon" transform="translate(-30 -126)">
+    <circle id="Ellipse_28" data-name="Ellipse 28" cx="19" cy="19" r="19" transform="translate(30 126)" fill="#93a1af"/>
+    <g id="notes" transform="translate(41.328 135.141)">
+      <path id="Path_110" data-name="Path 110" d="M9.692,4.5h10.96a2.192,2.192,0,0,1,2.192,2.192V22.036a2.192,2.192,0,0,1-2.192,2.192H9.692A2.192,2.192,0,0,1,7.5,22.036V6.692A2.192,2.192,0,0,1,9.692,4.5Z" transform="translate(-7.5 -4.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_111" data-name="Path 111" d="M13.5,10.5h6.576" transform="translate(-9.116 -6.116)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_112" data-name="Path 112" d="M13.5,16.5h6.576" transform="translate(-9.116 -7.732)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_113" data-name="Path 113" d="M13.5,22.5h4.384" transform="translate(-9.116 -9.348)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

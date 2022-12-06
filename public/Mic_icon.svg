@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="13.2" height="18" viewBox="0 0 13.2 18">
+  <g id="Mic_icon" transform="translate(-5.625 -1.125)">
+    <path id="Path_119" data-name="Path 119" d="M14.85,12.825a3.6,3.6,0,0,0,3.6-3.6v-4.5a3.6,3.6,0,0,0-7.2,0v4.5a3.6,3.6,0,0,0,3.6,3.6Zm-2.4-8.1a2.4,2.4,0,0,1,4.8,0v4.5a2.4,2.4,0,0,1-4.8,0Z" transform="translate(-2.625)" fill="#6b6b6b"/>
+    <path id="Path_120" data-name="Path 120" d="M17.625,12.375v2.1a5.4,5.4,0,1,1-10.8,0v-2.1h-1.2v2.1a6.609,6.609,0,0,0,6,6.572v3.327h1.2V21.047a6.609,6.609,0,0,0,6-6.572v-2.1Z" transform="translate(0 -5.25)" fill="#6b6b6b"/>
+    <g id="Rectangle_139" data-name="Rectangle 139" transform="translate(7.969 18.125)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="9" height="1" stroke="none"/>
+      <rect x="0.5" y="0.5" width="8" fill="none"/>
+    </g>
+  </g>
+</svg>

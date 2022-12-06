@@ -1,0 +1,4 @@
+<svg id="Resources" xmlns="http://www.w3.org/2000/svg" width="56" height="45" viewBox="0 0 56 45">
+  <text id="Resources-2" data-name="Resources" transform="translate(28 41)" fill="#93a1af" font-size="12" font-family="OpenSans-Light, Open Sans" font-weight="300"><tspan x="-27.981" y="0">Resources</tspan></text>
+  <path id="network-wired-solid" d="M14.625,4.5V6.75h-4.5A3.392,3.392,0,0,0,6.75,10.125v4.5H4.5v6.75h6.75v-6.75H9v-4.5A1.106,1.106,0,0,1,10.125,9h4.5v2.25h6.75V4.5Zm2.25,2.25h2.25V9h-2.25Zm5.625,0V9h3.375A1.106,1.106,0,0,1,27,10.125v4.5H24.75v6.75H31.5v-6.75H29.25v-4.5A3.392,3.392,0,0,0,25.875,6.75ZM6.75,16.875H9v2.25H6.75Zm20.25,0h2.25v2.25H27ZM6.75,22.5v3.375a3.392,3.392,0,0,0,3.375,3.375h4.5V31.5h6.75V24.75h-6.75V27h-4.5A1.106,1.106,0,0,1,9,25.875V22.5ZM27,22.5v3.375A1.106,1.106,0,0,1,25.875,27H22.5v2.25h3.375a3.392,3.392,0,0,0,3.375-3.375V22.5ZM16.875,27h2.25v2.25h-2.25Z" transform="translate(10.5 -4.5)" fill="#93a1af"/>
+</svg>

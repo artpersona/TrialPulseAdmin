@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38">
+  <g id="Schedule_icon" transform="translate(-40 -496.5)">
+    <circle id="Ellipse_19" data-name="Ellipse 19" cx="19" cy="19" r="19" transform="translate(40 496.5)" fill="#93a1af"/>
+    <g id="event-schedule" transform="translate(45.569 503.247)">
+      <path id="Path_133" data-name="Path 133" d="M20.341,27.182a5.716,5.716,0,1,1,5.716-5.716A5.716,5.716,0,0,1,20.341,27.182Zm0-10a4.287,4.287,0,1,0,4.287,4.287A4.287,4.287,0,0,0,20.341,17.179Z" transform="translate(-3.695 -4.926)" fill="#fff"/>
+      <path id="Path_134" data-name="Path 134" d="M24.351,25.251,22.5,23.4V20.25h1.429v2.565l1.429,1.429Z" transform="translate(-6.568 -6.568)" fill="#fff"/>
+      <path id="Path_135" data-name="Path 135" d="M21.647,5.108a1.429,1.429,0,0,0-1.429-1.429H17.36V2.25H15.932V3.679H10.216V2.25H8.787V3.679H5.929A1.429,1.429,0,0,0,4.5,5.108V19.4a1.429,1.429,0,0,0,1.429,1.429H8.787V19.4H5.929V5.108H8.787V6.537h1.429V5.108h5.716V6.537H17.36V5.108h2.858V9.395h1.429Z" fill="#fff"/>
+    </g>
+  </g>
+</svg>

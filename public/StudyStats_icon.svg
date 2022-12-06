@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38">
+  <g id="StudyStats_icon" transform="translate(-33 -122.5)">
+    <circle id="Ellipse_19" data-name="Ellipse 19" cx="19" cy="19" r="19" transform="translate(33 122.5)" fill="#93a1af"/>
+    <g id="graph-bar" transform="translate(40 127.321)">
+      <path id="Path_104" data-name="Path 104" d="M11.052,14.439H7.662A.362.362,0,0,0,7.3,14.8v5.264a.362.362,0,0,0,.363.363h3.39a.362.362,0,0,0,.363-.363V14.8A.362.362,0,0,0,11.052,14.439Z" fill="#fff"/>
+      <path id="Path_105" data-name="Path 105" d="M16.338,3.571h-3.39a.362.362,0,0,0-.363.363V20.066a.362.362,0,0,0,.363.363h3.39a.362.362,0,0,0,.363-.363V3.934A.362.362,0,0,0,16.338,3.571Z" fill="#fff"/>
+      <path id="Path_106" data-name="Path 106" d="M21.652,8.472h-3.39a.362.362,0,0,0-.363.363V20.066a.362.362,0,0,0,.363.363h3.39a.362.362,0,0,0,.363-.363V8.835a.363.363,0,0,0-.363-.363Z" fill="#fff"/>
+      <path id="Path_107" data-name="Path 107" d="M5.738,8.472H2.348a.362.362,0,0,0-.363.363V20.066a.362.362,0,0,0,.363.363h3.39a.362.362,0,0,0,.363-.363V8.835A.363.363,0,0,0,5.738,8.472Z" fill="#fff"/>
+    </g>
+    <rect id="Rectangle_126" data-name="Rectangle 126" width="26" height="2" transform="translate(39 149.5)" fill="#fff"/>
+  </g>
+</svg>

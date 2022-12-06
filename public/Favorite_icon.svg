@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42">
+  <g id="Favorite_icon" transform="translate(-229 -261)">
+    <circle id="Ellipse_26" data-name="Ellipse 26" cx="21" cy="21" r="21" transform="translate(229 261)" fill="#ededed"/>
+    <path id="star" d="M23.16,9.741a.9.9,0,0,0-.728-.614l-6.625-.962-2.963-6a.939.939,0,0,0-1.619,0l-2.963,6-6.625.962a.9.9,0,0,0-.5,1.539L5.931,15.34,4.8,21.939a.9.9,0,0,0,1.31.951l5.926-3.116,5.925,3.115a.9.9,0,0,0,1.31-.951l-1.132-6.6,4.795-4.674a.9.9,0,0,0,.228-.924Z" transform="translate(237.965 269.301)" fill="#fda92b"/>
+  </g>
+</svg>
