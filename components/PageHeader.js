@@ -140,9 +140,9 @@ export default function PageHeader() {
 								</article>
 
 								<article>
-									<InputGroup className="mt-3 2md:!mt-0 xl:flex xl:w-[500px] h-[50px]">
+									<InputGroup className="mt-3 2md:!mt-0 xl:flex xl:w-[500px] h-[45px] ">
 										<Form.Control
-											className="rounded-bl-2xl rounded-tl-2xl w-full"
+											className="rounded-bl-2xl rounded-tl-2xl w-full px-4"
 											placeholder="Search protocols"
 											aria-label="Search protocols"
 										/>
