@@ -9,6 +9,7 @@ import CustomSwitch from "./CustomSwitch";
 import SiteInfo from "./SiteInfo";
 import ProtectedRoute from "./ProtectedRoute";
 import Empty from "./Empty";
+import CardDefault from "./CardDefault";
 export {
   PageHeader,
   Footer,
@@ -21,4 +22,5 @@ export {
   SiteInfo,
   ProtectedRoute,
   Empty,
+  CardDefault
 };

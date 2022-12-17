@@ -3,13 +3,23 @@ import "../styles/globals.css";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Layout from "../layouts/Layout";
-import AuthProvider from "../shared/contexts/AuthContext";
-import SponsorProvider from "../shared/contexts/SponsorsContext";
-import MessageProvider from "../shared/contexts/MessagesContext";
-import ProtocolProvider from "../shared/contexts/ProtocolContext";
+// import AuthProvider from "../shared/contexts/AuthContext";
+// import SponsorProvider from "../shared/contexts/SponsorsContext";
+// import MessageProvider from "../shared/contexts/MessagesContext";
+// import ProtocolProvider from "../shared/contexts/ProtocolContext";
 import AppProvider from "../shared/contexts/AppContext";
-import SiteProvider from "../shared/contexts/SitesContext";
+// import SiteProvider from "../shared/contexts/SitesContext";
 import { ProtectedRoute } from "../components";
+import { lazy } from "react";
+
+const AuthProvider = lazy(()=> import("../shared/contexts/AuthContext"))
+const SponsorProvider = lazy(()=> import( "../shared/contexts/SponsorsContext"))
+const MessageProvider = lazy(()=> import( "../shared/contexts/MessagesContext"))
+const ProtocolProvider = lazy(()=> import( "../shared/contexts/ProtocolContext"))
+// const AppProvider = lazy(()=> import( "../shared/contexts/AppContext"))
+const SiteProvider = lazy(()=> import( "../shared/contexts/SitesContext"))
+// const { ProtectedRoute } = lazy(()=> import( "../components"))
+
 function MyApp({ Component, pageProps }) {
 	const router = useRouter();
 	return (

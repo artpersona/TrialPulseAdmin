@@ -4,11 +4,11 @@ import { useRouter } from "next/router";
 function ProtectedRoute({ children }) {
   const { loggedUser } = useAuthContext();
   const router = useRouter();
-  useEffect(() => {
-    if (!loggedUser) {
-      router.push("/login");
-    }
-  }, [loggedUser, router]);
+  // useEffect(() => {
+  //   if (!loggedUser) {
+  //     router.push("/login");
+  //   }
+  // }, [loggedUser, router]);
 
   return <>{loggedUser ? children : null}</>;
 }

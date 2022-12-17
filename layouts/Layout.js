@@ -2,18 +2,10 @@ import { PageHeader, Footer } from "../components";
 import styles from "../styles/Layout.module.css";
 export default function Layout({ children }) {
   return (
-    <>
-      <PageHeader />
-      <main className={styles.background}>
-        <div
-          // className="shadow-lg bg-red rounded w-50 mw-auto mx-auto py-5 my-3"
-          className={styles.container}
-          // style={{ backgroundColor: "blue", width: "" }}
-        >
-          <div className={styles.wrapper}>{children}</div>
-        </div>
-      </main>
-      <Footer />
-    </>
+    <div className="flex flex-col justify-between h-full w-full">
+      <PageHeader className="grow-0"/>
+      <div className="grow h-full w-full">{children}</div>
+      <Footer className="grow-0"/>
+    </div>
   );
 }
