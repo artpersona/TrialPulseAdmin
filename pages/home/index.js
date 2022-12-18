@@ -1,11 +1,6 @@
 import {
   Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
+  registerables,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import SwiperCardsHome from "./SwiperCardsHome";
@@ -13,14 +8,7 @@ import SwiperNewSponsors from "./SwiperNewSponsors";
 import {options, data} from "../../shared/utils/chart.utitlity"
 import {a, b, c} from "../../shared/utils/dashboardSample.utility"
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+ChartJS.register(...registerables);
 
 export default function Home() {
   return (
