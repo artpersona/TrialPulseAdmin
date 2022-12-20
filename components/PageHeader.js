@@ -18,7 +18,7 @@ export default function PageHeader() {
 		<Navbar
 			style={{ fontFamily: "adobe-clean, sans-serif" }}
 			expand="lg"
-			className="shadow-md p-3 bg-[#ededed] rounded"
+			className="shadow-md p-3 bg-gray-light rounded"
 		>
 			<Container>
 				<Navbar.Brand href="#home" className="mr-0">
@@ -48,18 +48,6 @@ export default function PageHeader() {
 					<Nav className="w-11/12">
 						<section className="flex flex-col 2md:flex-row justify-between w-full">
 							<article className="gap-y-4 2md:!gap-y-0 flex flex-wrap mt-4 2md:!mt-[5px] 2md:flex-nowrap">
-								<Link href={"/protocols"}>
-									<a className="text-[14px] px-3 flex flex-col items-center font-light text-[#93a1af]">
-										<Image
-											src="/Study_icon.svg"
-											alt="protocols"
-											width="35"
-											height="35"
-										/>
-										Protocols
-									</a>
-								</Link>
-
 								<Link href={"/sponsors"}>
 									<a className="text-[14px] px-3 flex flex-col items-center font-light text-[#93a1af]">
 										<Image
@@ -69,6 +57,18 @@ export default function PageHeader() {
 											height="35"
 										/>
 										Sponsors
+									</a>
+								</Link>
+
+								<Link href={"/protocols"}>
+									<a className="text-[14px] px-3 flex flex-col items-center font-light text-[#93a1af]">
+										<Image
+											src="/Study_icon.svg"
+											alt="protocols"
+											width="35"
+											height="35"
+										/>
+										Protocols
 									</a>
 								</Link>
 
