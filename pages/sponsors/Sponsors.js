@@ -177,7 +177,7 @@ export default function Sponsors() {
 											<BsStarFill />
 											<p>Favorites</p>
 										</figure>
-										<div className="w-full rounded-[2.2rem] border-2 border-gray-secondary mt-4 p-[0.65rem] shadow-md cursor-pointer space-y-3">
+										<div className="w-full rounded-[2.2rem] border-2 border-gray-secondary mt-4 p-[0.65rem] shadow-md space-y-3">
 											{c.map((item, index) => {
 												return (
 													<>
@@ -185,7 +185,7 @@ export default function Sponsors() {
 															key={index}
 															className="flex px-2 items-center justify-between"
 														>
-															<div className="flex space-x-3">
+															<div className="flex space-x-3 cursor-pointer">
 																<div className="text-green-light relative">
 																	{item.onlineStatus && (
 																		<span className="absolute -mt-1">
@@ -205,10 +205,10 @@ export default function Sponsors() {
 																</h3>
 															</div>
 															<div className="flex space-x-2">
-																<span className="flex justify-center items-center text-yellow-primary bg-gray-light rounded-full h-[35px] w-[35px]">
+																<span className="flex justify-center items-center text-yellow-primary bg-gray-light rounded-full h-[35px] w-[35px] cursor-pointer">
 																	<BsFillTelephoneFill />
 																</span>
-																<span className="flex justify-center items-center text-yellow-primary bg-gray-light rounded-full h-[35px] w-[35px]">
+																<span className="flex justify-center items-center text-yellow-primary bg-gray-light rounded-full h-[35px] w-[35px] cursor-pointer">
 																	<AiTwotoneMessage />
 																</span>
 															</div>
@@ -248,13 +248,13 @@ export default function Sponsors() {
 													</figure>
 													<div
 														key={item[0]}
-														className="w-full rounded-[2.2rem] border-2 border-gray-secondary mt-4 p-[0.65rem] shadow-md cursor-pointer space-y-3"
+														className="w-full rounded-[2.2rem] border-2 border-gray-secondary mt-4 p-[0.65rem] shadow-md space-y-3"
 													>
 														{item[1].map((contact, index) => {
 															return (
 																<>
 																	<figure className="flex px-2 items-center justify-between">
-																		<div className="flex space-x-3">
+																		<div className="flex space-x-3 cursor-pointer">
 																			<div className="text-green-light relative">
 																				{contact.onlineStatus && (
 																					<span className="absolute -mt-1">
@@ -274,10 +274,10 @@ export default function Sponsors() {
 																			</h3>
 																		</div>
 																		<div className="flex space-x-2">
-																			<span className="flex justify-center items-center text-yellow-primary bg-gray-light rounded-full h-[35px] w-[35px]">
+																			<span className="flex justify-center items-center text-yellow-primary bg-gray-light rounded-full h-[35px] w-[35px] cursor-pointer">
 																				<BsFillTelephoneFill />
 																			</span>
-																			<span className="flex justify-center items-center text-yellow-primary bg-gray-light rounded-full h-[35px] w-[35px]">
+																			<span className="flex justify-center items-center text-yellow-primary bg-gray-light rounded-full h-[35px] w-[35px] cursor-pointer">
 																				<AiTwotoneMessage />
 																			</span>
 																		</div>

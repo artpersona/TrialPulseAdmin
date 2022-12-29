@@ -4,21 +4,30 @@
 
 @layer base {
 	h1 {
-	  @apply text-4xl;
+		@apply text-4xl;
 	}
 	h2 {
-	  @apply text-2xl;
+		@apply text-2xl;
 	}
 	h3 {
 		@apply text-xl;
 	}
 }
+@layer components {
+	.card {
+		background-color: theme("colors.white");
+		border-radius: theme("borderRadius.lg");
+		padding: theme("spacing.6");
+		box-shadow: theme("boxShadow.xl");
+	}
+	/* ... */
+}
 
 /* override browser default */
 html,
 body {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 /* use viewport-relative units to cover page fully */
@@ -27,18 +36,18 @@ body {
 	width: 100vw;
 	margin: 0 auto;
 	position: relative;
-	overflow-x: hidden
+	overflow-x: hidden;
 }
 
 /* include border and padding in element width and height */
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 /* full-sized  container that fills up the page */
 #__next {
-  height: auto;
-  width: 100%;
+	height: auto;
+	width: 100%;
 }
 
 .buttonPrimary {
