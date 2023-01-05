@@ -6,7 +6,7 @@ import {
   import SwiperCardsHome from "./SwiperCardsHome";
   import SwiperNewSponsors from "./SwiperNewSponsors";
   import {options, data} from "../../shared/utils/chart.utitlity"
-  import {a, b, c} from "../../shared/utils/dashboardSample.utility"
+  import {homeA, homeB, homeC} from "../../shared/utils/dashboardSample.utility"
   
   ChartJS.register(...registerables);
   
@@ -14,7 +14,7 @@ import {
     return (
       <div className="container h-full w-full min-h-screen">
         <section className="flex justify-between space-x-5 bg-white p-4 max-w-[1280px] m-auto">
-          {a.map((item, i) => {
+          {homeA.map((item, i) => {
             return (
               <article key={i} className="flex flex-col space-y-2 items-center">
                 <h3>{item.title}</h3>
@@ -29,17 +29,17 @@ import {
   
         <section className='border-t-2 border-t-gray-light py-4'>
           <h4 className="text-gray-primary">Recently Viewed</h4>
-          <SwiperCardsHome data={b} type="recentlyViewed"/>
+          <SwiperCardsHome data={homeB} type="recentlyViewed"/>
         </section>
   
         <section className='border-t-2 border-t-gray-light py-4'>
           <h4 className="text-gray-primary">New Studies</h4>
-          <SwiperCardsHome data={b} type="newStudies"/>
+          <SwiperCardsHome data={homeB} type="newStudies"/>
         </section>
   
         <section className='border-t-2 border-t-gray-light py-4'>
           <h4 className="text-gray-primary">New Sponsors</h4>
-          <SwiperNewSponsors data={c} type="newStudies"/>
+          <SwiperNewSponsors data={homeC} type="newStudies"/>
         </section>
         
       </div>

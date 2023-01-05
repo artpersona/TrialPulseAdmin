@@ -1,4 +1,4 @@
-export const a = [
+export const homeA = [
     {
       title: "Protocols",
       n: "4,651",
@@ -31,7 +31,7 @@ export const a = [
     }
   ]
 
-export const b = [
+export const homeB = [
     {
       title: "Study Title",
       lastViewed: "August 29th",
@@ -97,7 +97,7 @@ export const b = [
     }
 ]
 
-export const c = [
+export const homeC = [
   {
     title: "Clinic Across the Street",
     lastViewed: "August 29th",
