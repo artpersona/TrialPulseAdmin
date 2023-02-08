@@ -11,6 +11,7 @@ import AppProvider from "../shared/contexts/AppContext";
 // import SiteProvider from "../shared/contexts/SitesContext";
 import { ProtectedRoute } from "../components";
 import { lazy } from "react";
+// import Home from "./home/Home";
 
 const AuthProvider = lazy(()=> import("../shared/contexts/AuthContext"))
 const SponsorProvider = lazy(()=> import( "../shared/contexts/SponsorsContext"))
@@ -23,7 +24,8 @@ const SiteProvider = lazy(()=> import( "../shared/contexts/SitesContext"))
 function MyApp({ Component, pageProps }) {
 	const router = useRouter();
 	return (
-		<AuthProvider>
+		// <Home />
+		// <AuthProvider>
 			<AppProvider>
 				<ProtocolProvider>
 					<SiteProvider>
@@ -40,21 +42,23 @@ function MyApp({ Component, pageProps }) {
 									/>
 								</Head>
 
-								{router.pathname !== "/login" ? (
+								{/* {router.pathname !== "/login" ? (
 									<ProtectedRoute>
 										<Layout>
 											<Component {...pageProps} />
 										</Layout>
 									</ProtectedRoute>
-								) : (
-									<Component {...pageProps} />
-								)}
+								) : ( */}
+									<Layout>
+										<Component {...pageProps} />
+									</Layout>
+								{/* )} */}
 							</MessageProvider>
 						</SponsorProvider>
 					</SiteProvider>
 				</ProtocolProvider>
 			</AppProvider>
-		</AuthProvider>
+		// </AuthProvider>
 	);
 }
 
